@@ -1,0 +1,5 @@
+.Rproj.user
+data/*.RData
+data/*.rds
+data/*.rda
+data-raw/
