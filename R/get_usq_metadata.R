@@ -352,12 +352,16 @@ get_usq_metadata = function(return_this = "tidy",
     #5 class
     these_subtypes_5 = as.data.frame(predicted$predictions_5classes) %>%
       rownames_to_column("sample_id") %>%
-      rename(subtype_5_class = 2)
+      rename(subtype_5_class = 2) %>%
+      mutate(subtype_5_class = factor(subtype_5_class, 
+                                      levels = c("Uro", "GU", "BaSq", "Mes", "ScNE")))
 
     #7 class
     these_subtypes_7 = as.data.frame(predicted$predictions_7classes) %>%
       rownames_to_column("sample_id") %>%
-      rename(subtype_7_class = 2)
+      rename(subtype_7_class = 2) %>%
+      mutate(subtype_7_class = factor(subtype_7_class, 
+                                      levels = c("UroA", "UroB", "UroC", "GU", "BaSq", "Mes", "ScNE")))
 
     #subtype scores
     subtype_scores = as.data.frame(predicted$subtype_scores) %>%
@@ -369,8 +373,11 @@ get_usq_metadata = function(return_this = "tidy",
 
     #signature scores
     signature_scores = predicted$scores %>%
-      rownames_to_column("sample_id")
-
+      rownames_to_column("sample_id") %>%
+      mutate(progression_risk = factor(progression_risk, levels = c("LR", "HR"))) %>% 
+      mutate(molecular_grade_who_2022 = factor(molecular_grade_who_2022, levels = c("LG", "HG"))) %>% 
+      mutate(molecular_grade_who_1999 = factor(molecular_grade_who_1999, levels = c("G1_G2", "G3"))) 
+      
     #combine the return
     lundtax_return = these_subtypes_5 %>%
       left_join(these_subtypes_7, by = "sample_id") %>%
