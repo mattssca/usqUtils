@@ -71,6 +71,8 @@
 #'
 #' @export
 #' 
+#' @import LundTaxR dplyr tibble stringr tidyr
+#' 
 get_usq_metadata = function(return_this = "tidy",
                             run_LundTaxR = FALSE,
                             category_group = "uc_index_high_quality",

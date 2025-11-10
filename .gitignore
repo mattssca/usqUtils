@@ -2,4 +2,7 @@
 data/*.RData
 data/*.rds
 data/*.rda
-data-raw/
+data-raw/UROSCANSEQ Cohort1 662 Index_UC - Version 2
+data-raw/*.RData
+data-raw/*.R
+!data-raw/.gitkeep
