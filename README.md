@@ -16,10 +16,9 @@ git clone https://github.com/mattssca/usqUtils.git
 
 ### 2. Access the Data Folder in LUBox
 
-- Log in to LU Box and locate the associated data folder for usqUtils `(/Git/usqUtils-data)`.
+- Log in to LU Box and locate the associated data folder for usqUtils `(/Git/data/usqUtils)`.
 - Download the contents of the LU Box data folder.
-- Place the following files; `usq_expression_matrix.rda` and `usq_metadata.rda` into the `data/` directory inside your cloned `usqUtils` repository.
-- Place `UROSCANSEQMetadata2025_01_16.Rdata` in the `data-raw/` directory.
+- Replace the `data` and `data-raw` folders in your cloned repo wioth the downloaded folders from LU Box.
 
 ### 3. Install the Package
 
