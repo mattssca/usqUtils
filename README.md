@@ -1,6 +1,16 @@
 # usqUtils
 
-<img src="man/figures/logo.png" align="right" height="280" alt="LundTaxR logo" />
+<img src="man/figures/logo.png" align="right" height="280" alt="usqUtils logo" />
+
+<!-- R Package Badges -->
+![R](https://img.shields.io/badge/R-%E2%89%A54.0.0-blue)
+![License](https://img.shields.io/badge/license-GPL%20(%E2%89%A5%202)-blue)
+![Version](https://img.shields.io/badge/version-2.0.0-blue)
+![Lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen)
+
+<!-- Domain Badges -->
+![Bioinformatics](https://img.shields.io/badge/domain-bioinformatics-purple)
+![Cancer Research](https://img.shields.io/badge/application-cancer%20research-red)
 
 ## Overview
 
