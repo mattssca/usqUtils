@@ -1,5 +1,7 @@
 # usqUtils
 
+<img src="man/figures/logo.png" align="right" height="280" alt="LundTaxR logo" />
+
 ## Overview
 
 usqUtils is an R package for working with USQ metadata and column processing utilities. This guide will help you set up and use the package.
