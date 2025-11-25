@@ -12,8 +12,9 @@
 ![Bioinformatics](https://img.shields.io/badge/domain-bioinformatics-purple)
 ![Cancer Research](https://img.shields.io/badge/application-cancer%20research-red)
 
+> **Streamlined metadata management and sample annotation for USQ bladder cancer cohorts**
 
-
+usqUtils provides a comprehensive suite of functions for organizing, processing, and annotating USQ cohort metadata. The package enables efficient data tidying, sample categorization, and integration of molecular subtype predictions, supporting reproducible analysis workflows in bladder cancer research.
 
 ## Overview
 
