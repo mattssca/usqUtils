@@ -4,14 +4,16 @@
 #' subtype predictions. This function provides flexible access to the USQ database
 #' metadata and associated expression data.
 #'
-#' @param return_this Character string specifying the return format. Options:
+#' @param return_this Character string specifying the return format. For `return_this = "pub"` 
+#' and `return_this = "everything"`, metadata will always be in tidy format For raw format, 
+#' use `return_this = "full_meta"` or simply `return_this = "raw"`. Parameter options:
 #'   \itemize{
 #'     \item "tidy" - Tidy format metadata (default)
 #'     \item "raw" - Raw format metadata
-#'     \item "pub" - Publication ready with sensitive information removed
+#'     \item "pub" - Publication ready (tidy) with sensitive information removed
 #'     \item "change_log" - Returns only the change log
-#'     \item "full_meta" - Full metadata object without filters
-#'     \item "everything" - Complete bundle with metadata, expression data, and predictions
+#'     \item "full_meta" - Full metadata object without filters (tidy, and raw) + changelog
+#'     \item "everything" - Complete bundled with metadata (tidy), expression data, and predictions
 #'     \item "only_expressions" - Expression data only for selected samples
 #'   }
 #' @param run_LundTaxR Logical. Whether to run LundTaxR subtype predictions. 
@@ -45,7 +47,7 @@
 #'     \item "raw" - Data frame with raw metadata format, optionally with predictions
 #'     \item "change_log" - Change log object
 #'     \item "full_meta" - Complete metadata object (list)
-#'     \item "everything" - List containing metadata, expression data, and all predictions
+#'     \item "everything" - List containing metadata (in tidy format), expression data, and all predictions
 #'     \item "only_expressions" - Expression matrix for selected samples
 #'   }
 #'
@@ -87,10 +89,13 @@ get_usq_metadata = function(return_this = "tidy",
                             impute_kNN = 5){  #LundTaxR parameters
   
   if(!return_this %in% c("only_expressions", "change_log")){
-    #print any warnings
-    message("\n############################################")
-    message("################## WARNINGS ################")
-    message("############################################\n")
+    
+    if(verbose){
+      #print any warnings
+      message("\n############################################")
+      message("################## WARNINGS ################")
+      message("############################################\n") 
+    }
     
     if(!return_this %in% c("tidy", "raw", "pub")){
       

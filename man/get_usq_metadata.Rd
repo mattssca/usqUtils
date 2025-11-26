@@ -36,14 +36,16 @@ get_usq_data(
 )
 }
 \arguments{
-\item{return_this}{Character string specifying the return format. Options:
+\item{return_this}{Character string specifying the return format. For \code{return_this = "pub"}
+and \code{return_this = "everything"}, metadata will always be in tidy format For raw format,
+use \code{return_this = "full_meta"} or simply \code{return_this = "raw"}. Parameter options:
 \itemize{
 \item "tidy" - Tidy format metadata (default)
 \item "raw" - Raw format metadata
-\item "pub" - Publication ready with sensitive information removed
+\item "pub" - Publication ready (tidy) with sensitive information removed
 \item "change_log" - Returns only the change log
-\item "full_meta" - Full metadata object without filters
-\item "everything" - Complete bundle with metadata, expression data, and predictions
+\item "full_meta" - Full metadata object without filters (tidy, and raw) + changelog
+\item "everything" - Complete bundled with metadata (tidy), expression data, and predictions
 \item "only_expressions" - Expression data only for selected samples
 }}
 
@@ -89,7 +91,7 @@ Depends on return_this parameter:
 \item "raw" - Data frame with raw metadata format, optionally with predictions
 \item "change_log" - Change log object
 \item "full_meta" - Complete metadata object (list)
-\item "everything" - List containing metadata, expression data, and all predictions
+\item "everything" - List containing metadata (in tidy format), expression data, and all predictions
 \item "only_expressions" - Expression matrix for selected samples
 }
 }
